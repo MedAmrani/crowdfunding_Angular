@@ -1,0 +1,55 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="header-left">
+      <h1 id="logo">
+          <a routerLink="/"><img src="../../assets/images/icon.png" alt=""/></a>
+      </h1>
+
+  </div>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+
+
+
+
+        <li class="nav-item">
+            <a routerLink="projects" class="nav-title">Discover</a>
+            <p class="rs nav-description">Great Projects</p>
+        </li>
+
+
+
+        <li class="nav-item">
+            <a routerLink="newproject"  class="nav-title clickable">Start</a>
+            <p class="rs nav-description">Create Project</p>
+        </li>
+
+
+
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+        <!-- (click)="logout()" -->
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->
